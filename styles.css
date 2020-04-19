@@ -1,0 +1,46 @@
+.pokemon-container {
+  border: 1px solid;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.pokemon-list {
+  text-transform: capitalize;
+}
+
+.menu-wrapper {
+  border: 1px solid;
+ display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  height: 100px;
+  align-items: center;
+}
+
+.height-container, .base-exp-container, .weight-container, .id-number-container {
+  display: flex;
+  padding: 5px;
+
+}
+
+.abilities-container {
+  line-height: .5;
+  padding: 5px;
+}
+
+.name-img-container {
+  border: 1px solid;
+  height: 200px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: 35px auto 0px auto;
+}
+
+.name-img-container > img {
+  height: 100%;
+  width: 100%;
+}
