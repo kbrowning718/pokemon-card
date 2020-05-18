@@ -14,6 +14,8 @@ var abilitiesContainer = document.getElementById('abilities');
 var menu = document.getElementById('pokemon-list');
 var weightContainer = document.getElementById('weight');
 var nameImgContainer = document.getElementById('name-img');
+var imgContainer = document.getElementById('p-img-container');
+var nameContainer = document.getElementById('name-container');
 var movesContainer = document.getElementById('moves');
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -45,6 +47,7 @@ menu.addEventListener('change', function (e) { fetch(`https://pokeapi.co/api/v2/
   pokemon.sprites = data.sprites;
   pokemon.moves = data.moves;
   pokemon.types = data.types;
+  pokemon.name = data.name;
 
 abilitiesContainer.innerHTML = '';
   nameImgContainer.innerHTML = '';
@@ -57,7 +60,42 @@ abilitiesContainer.innerHTML = '';
 
     return a.ability;
 
-  });
+  })
+
+  var pDescription = document.createElement('div');
+  console.log(pDescription);
+  pDescription.classList.add('pokemon-description-container');
+  nameImgContainer.appendChild(pDescription);
+
+  var pNameContainer = document.createElement('div');
+  pNameContainer.classList.add('pokemon-description-field');
+pDescription.appendChild(pNameContainer);
+
+  var pName = document.createElement('p');
+  var nameTitle = document.createElement('p');
+nameTitle.classList.add('title-text');
+  nameTitle.innerText = "Name:";
+  pName.innerText = pokemon.name;
+  pNameContainer.appendChild(nameTitle);
+pNameContainer.appendChild(pName);
+
+var pTypeContainer = document.createElement('div');
+pTypeContainer.classList.add('pokemon-description-field');
+pDescription.appendChild(pTypeContainer);
+
+var typeTitle = document.createElement('p');
+typeTitle.classList.add('title-text');
+typeTitle.innerHTML = "Pokemon Type:";
+pTypeContainer.appendChild(typeTitle);
+
+pokemon.types.map(function(t) {
+  var pType = document.createElement('p');
+  pType.innerHTML = t.type.name;
+pTypeContainer.appendChild(pType);
+
+  return t.type;
+});
+
 
     var pMoves = document.createElement('p');
     pMoves.innerHTML = `This Pokemon can learn ${pokemon.moves.length} moves.`;
@@ -66,7 +104,6 @@ abilitiesContainer.innerHTML = '';
 
    var pImg = document.createElement('img');
     pImg.src = pokemon.sprites.front_default;
-    console.log(pImg);
     nameImgContainer.appendChild(pImg);
 
 
