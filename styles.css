@@ -9,16 +9,28 @@
   justify-content: space-evenly;
 }
 
+.menu-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+}
+
 .pokemon-list {
   text-transform: capitalize;
+  margin-top: 10px;
 }
 
 .menu-wrapper {
   border: 1px solid;
- display: flex;
-  justify-content: center;
-  margin: 50px 0px 10px 0px;
   height: 100px;
+  width: 80%;
+  margin: 25px auto 15px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -70,4 +82,8 @@
 
 .pokemon-description-field > p {
   margin: 5px;
+}
+
+.title-text {
+  font-weight: 600;
 }
